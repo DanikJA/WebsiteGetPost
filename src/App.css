@@ -1,0 +1,29 @@
+/* Mobile first (0 - 767px) */
+.container {
+  width: 100%;
+  max-width: 360px;
+
+  box-sizing: content-box;
+}
+/* ≥ 768px */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* ≥ 1024px */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* ≥ 2560px */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1400px;
+    align-items: center;
+    justify-content: center;
+  }
+}

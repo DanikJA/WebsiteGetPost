@@ -43,7 +43,9 @@ input[type="tel"] {
 }
 
 .form__label {
+  display: flex;
   margin-top: 43px;
+  margin-bottom: 11px;
 }
 
 label {
@@ -53,15 +55,17 @@ label {
   font-size: 14px;
 }
 
-.upload-block input[type="file"] {
+/* .upload-block input[type="file"] {
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 14px;
   width: 100%;
   border-radius: 4px;
-}
+} */
 
 .form__submit {
+  display: flex;
   background-color: #f4e041;
+  color: rgba(255, 255, 255, 0.87);
   width: 100px;
   height: 34px;
   padding: 9px 20px;
@@ -74,6 +78,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .form__submit:hover {
@@ -125,11 +130,10 @@ input[type="radio"]:focus {
 .upload-block {
   display: flex;
   align-items: stretch;
-  margin-bottom: 20px;
 }
 
 .upload-label {
-  padding: 10px 20px;
+  padding: 14px;
   font-weight: 500;
   font-size: 14px;
   border: 1px solid #333;
@@ -144,10 +148,11 @@ input[type="radio"]:focus {
 }
 
 .upload-filename {
+  display: flex;
   font-size: 16px;
   color: #7e7e7e;
   border: 1px solid #ccc;
-  padding: 8px 12px;
+  padding: 14px;
   flex: 1;
   border-radius: 0 4px 4px 0;
 }

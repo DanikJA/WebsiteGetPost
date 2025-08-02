@@ -112,6 +112,7 @@ const PostForm = () => {
       <h2 className="post-form__title">Working with POST request</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input
+          className="post-form-input"
           type="text"
           name="name"
           placeholder="Your name"
@@ -125,6 +126,7 @@ const PostForm = () => {
           disabled={isSubmitting}
         />
         <input
+          className="post-form-input"
           type="email"
           name="email"
           placeholder="Email"
@@ -136,6 +138,7 @@ const PostForm = () => {
           disabled={isSubmitting}
         />
         <input
+          className="post-form-input"
           type="tel"
           name="phone"
           placeholder="Phone"
@@ -150,7 +153,7 @@ const PostForm = () => {
         <p className="form__hint">+38 (XXX) XXX - XX - XX</p>
         <p className="form__label">Select your position</p>
         {positions.map((pos) => (
-          <label key={pos.id}>
+          <label key={pos.id} className="post-form-input-radio">
             <input
               type="radio"
               name="position"

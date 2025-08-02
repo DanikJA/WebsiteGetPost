@@ -2,8 +2,8 @@
 .container {
   width: 100%;
   max-width: 360px;
-
-  box-sizing: content-box;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 /* ≥ 768px */
 @media (min-width: 768px) {

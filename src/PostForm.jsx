@@ -1,6 +1,7 @@
 import "./PostForm.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import successImg from "./assets/success-image.svg"; // шлях залежить від структури
 
 const PostForm = () => {
   const [positions, setPositions] = useState([]);
@@ -12,6 +13,7 @@ const PostForm = () => {
     photo: null,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const fetchPositions = async () => {
@@ -85,6 +87,7 @@ const PostForm = () => {
 
       // Очищаємо форму після успішної відправки
       clearForm();
+      setIsSuccess(true);
     } catch (err) {
       console.error("Submit error:", err.response?.data || err.message);
 
@@ -109,88 +112,106 @@ const PostForm = () => {
 
   return (
     <section className="post-form">
-      <h2 className="post-form__title">Working with POST request</h2>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          className="post-form-input"
-          type="text"
-          name="name"
-          placeholder="Your name"
-          required
-          minLength="2"
-          maxLength="60"
-          value={formData.name}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, name: e.target.value }))
-          }
-          disabled={isSubmitting}
-        />
-        <input
-          className="post-form-input"
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          value={formData.email}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, email: e.target.value }))
-          }
-          disabled={isSubmitting}
-        />
-        <input
-          className="post-form-input"
-          type="tel"
-          name="phone"
-          placeholder="Phone"
-          required
-          pattern="^\+380\d{9}$"
-          value={formData.phone}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, phone: e.target.value }))
-          }
-          disabled={isSubmitting}
-        />
-        <p className="form__hint">+38 (XXX) XXX - XX - XX</p>
-        <p className="form__label">Select your position</p>
-        {positions.map((pos) => (
-          <label key={pos.id} className="post-form-input-radio">
+      {isSuccess ? (
+        <div className="success-message">
+          <h2 className="success-title">User successfully registered</h2>
+          <img className="success-image" src={successImg} alt="Success" />
+          <p className="success-footer">
+            © abz.agency specially for the test task
+          </p>
+        </div>
+      ) : (
+        <>
+          <h2 className="post-form__title">Working with POST request</h2>
+          <form className="form" onSubmit={handleSubmit}>
             <input
-              type="radio"
-              name="position"
-              value={pos.id}
-              checked={selectedPosition === pos.id}
-              onChange={() => setSelectedPosition(pos.id)}
+              className="post-form-input"
+              type="text"
+              name="name"
+              placeholder="Your name"
               required
+              minLength="2"
+              maxLength="60"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, name: e.target.value }))
+              }
               disabled={isSubmitting}
             />
-            {pos.name}
-          </label>
-        ))}
-        <div className="upload-block">
-          <label htmlFor="photo-upload" className="upload-label">
-            Upload
-          </label>
-          <input
-            type="file"
-            id="photo-upload"
-            name="photo"
-            accept=".jpg,.jpeg"
-            required
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, photo: e.target.files[0] }))
-            }
-            disabled={isSubmitting}
-            className="upload-input"
-          />
-          <span className="upload-filename">
-            {formData.photo ? formData.photo.name : "Upload your photo"}
-          </span>
-        </div>
-
-        <button type="submit" className="form__submit" disabled={!isFormValid}>
-          {isSubmitting ? "Submitting..." : "Sign up"}
-        </button>
-      </form>
+            <input
+              className="post-form-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              value={formData.email}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, email: e.target.value }))
+              }
+              disabled={isSubmitting}
+            />
+            <input
+              className="post-form-input"
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              pattern="^\+380\d{9}$"
+              value={formData.phone}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, phone: e.target.value }))
+              }
+              disabled={isSubmitting}
+            />
+            <p className="form__hint">+38 (XXX) XXX - XX - XX</p>
+            <p className="form__label">Select your position</p>
+            {positions.map((pos) => (
+              <label key={pos.id} className="post-form-input-radio">
+                <input
+                  type="radio"
+                  name="position"
+                  value={pos.id}
+                  checked={selectedPosition === pos.id}
+                  onChange={() => setSelectedPosition(pos.id)}
+                  required
+                  disabled={isSubmitting}
+                />
+                {pos.name}
+              </label>
+            ))}
+            <div className="upload-block">
+              <label htmlFor="photo-upload" className="upload-label">
+                Upload
+              </label>
+              <input
+                type="file"
+                id="photo-upload"
+                name="photo"
+                accept=".jpg,.jpeg"
+                required
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    photo: e.target.files[0],
+                  }))
+                }
+                disabled={isSubmitting}
+                className="upload-input"
+              />
+              <span className="upload-filename">
+                {formData.photo ? formData.photo.name : "Upload your photo"}
+              </span>
+            </div>
+            <button
+              type="submit"
+              className="form__submit"
+              disabled={!isFormValid || isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Sign up"}
+            </button>
+          </form>
+        </>
+      )}
     </section>
   );
 };

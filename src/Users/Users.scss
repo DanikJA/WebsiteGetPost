@@ -20,7 +20,7 @@ $shadow: rgba(0, 0, 0, 0.08);
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     max-width: 1168px;
     margin: 0 auto 50px auto;
@@ -29,11 +29,13 @@ $shadow: rgba(0, 0, 0, 0.08);
   @media (min-width: 768px) {
     &__list {
       gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   @media (min-width: 1024px) {
     &__list {
       gap: 29px;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

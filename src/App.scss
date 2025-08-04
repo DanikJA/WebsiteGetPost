@@ -1,19 +1,19 @@
 .container {
   width: 100%;
-  max-width: 360px;
+  min-width: 360px;
   box-sizing: border-box;
   margin: 0 auto;
 
   @media (min-width: 768px) {
-    max-width: 768px;
+    min-width: 768px;
   }
 
   @media (min-width: 1024px) {
-    max-width: 960px;
+    min-width: 960px;
   }
 
   @media (min-width: 2560px) {
-    max-width: 1400px;
+    min-width: 1400px;
     align-items: center;
     justify-content: center;
   }

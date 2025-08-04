@@ -27,23 +27,22 @@
     margin-left: auto;
     display: flex;
     gap: 10px;
+  }
+  .btn {
+    padding: 0;
+    display: flex;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 34px;
+    border-radius: 80px;
+    background: #f4e041;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-    .btn {
-      padding: 0;
-      display: flex;
-      outline: none;
-      border: none;
-      width: 100px;
-      height: 34px;
-      border-radius: 80px;
-      background: #f4e041;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #ffe302;
-      }
+    &:hover {
+      background-color: #ffe302;
     }
   }
 }

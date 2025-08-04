@@ -1,5 +1,5 @@
 import "./Header.scss";
-import Logo from "./assets/Logo.svg";
+import Logo from "../assets/Logo.svg";
 
 const Header = ({ onUsersClick, onSignUpClick }) => {
   return (

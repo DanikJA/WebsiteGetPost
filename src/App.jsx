@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Hero from "./Hero";
 import PostForm from "./PostForm";
 import UsersSection from "./Users";

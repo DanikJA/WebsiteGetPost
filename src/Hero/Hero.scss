@@ -1,7 +1,7 @@
 .hero {
   background-image: url("../assets/pexels-alexandr-podvalny-1227513.jpeg");
   background-size: cover;
-  background-position: center; /* Зміщено вниз */
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   color: #fff;
@@ -9,24 +9,25 @@
 
 .hero__content {
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5); /* напівпрозорий фон під текстом */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 40px 16px 71px;
-}
+  /* Фон покриває всю ширину, але контент центрується */
+  width: 100%;
 
-@media (min-width: 768px) {
-  .hero__content {
+  /* Створюємо внутрішній контейнер для центрування тексту */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
     padding: 89px 194px;
   }
-}
 
-@media (min-width: 1024px) {
-  .hero__content {
-    padding: 164px 290px;
+  @media (min-width: 1024px) {
+    padding: 164px 322px;
   }
-}
 
-@media (min-width: 2560px) {
-  .hero__content {
+  @media (min-width: 2560px) {
     padding: 164px 395px;
   }
 }
@@ -39,6 +40,7 @@
   line-height: 1;
   text-align: center;
   color: #fff;
+  max-width: 380px;
 }
 
 .hero_p {
@@ -46,7 +48,8 @@
   line-height: 1.625;
   text-align: center;
   color: #fff;
-  margin: 0px;
+  margin: 0;
+  max-width: 380px;
 }
 
 .hero__btn {
@@ -59,6 +62,7 @@
   border: none;
   cursor: pointer;
   border-radius: 80px;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .hero__btn:hover {

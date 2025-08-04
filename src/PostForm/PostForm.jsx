@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import successImg from "../assets/success-image.svg";
 import InputMask from "react-input-mask";
+import defaultPhoto from "../assets/cover.svg";
 
 // Основний компонент форми
 const PostForm = () => {

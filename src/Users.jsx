@@ -33,6 +33,16 @@ const UsersSection = () => {
     loadUsers(page);
   };
 
+  const formatPhone = (number) => {
+    // Очистити від символів, якщо раптом не очищено
+    const cleaned = number.replace(/\D/g, "");
+    if (cleaned.length !== 12) return number; // повертаємо як є, якщо щось не так
+    return `+${cleaned.slice(0, 2)} (${cleaned.slice(2, 5)}) ${cleaned.slice(
+      5,
+      8
+    )} ${cleaned.slice(8, 10)} ${cleaned.slice(10, 12)}`;
+  };
+
   return (
     <section className="users">
       <h2 className="users__title">Working with GET request</h2>
@@ -44,7 +54,7 @@ const UsersSection = () => {
             <p className="user__info__name">{user.name}</p>
             <p className="user__info">{user.position}</p>
             <p className="user__info">{user.email}</p>
-            <p className="user__info">{user.phone}</p>
+            <p className="user__info">{formatPhone(user.phone)}</p>
           </div>
         ))}
       </div>

@@ -9,8 +9,8 @@ function App() {
   const usersRef = useRef(null);
   const formRef = useRef(null);
 
-  const scrollToSection = (ref) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (r) => {
+    r.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import Header from "./Header/Header";
-import Hero from "./Hero";
-import PostForm from "./PostForm";
-import UsersSection from "./Users";
+import Hero from "./Hero/Hero";
+import PostForm from "./PostForm/PostForm";
+import UsersSection from "./Users/Users";
 import "./App.scss";
 
 function App() {

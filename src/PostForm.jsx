@@ -1,4 +1,4 @@
-import "./PostForm.css";
+import "./PostForm.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import successImg from "./assets/success-image.svg";

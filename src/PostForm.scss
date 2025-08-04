@@ -1,0 +1,203 @@
+// Змінні
+$black: #000;
+$gray-dark: #7e7e7e;
+$gray-light: #ccc;
+$gray-border: #d0cfcf;
+$blue: #00bdd3;
+$yellow: #f4e041;
+$yellow-hover: #ffe302;
+$gray-disabled: #b4b4b4;
+$success-color: rgba(0, 0, 0, 0.87);
+$success-footer-color: #888;
+
+.post-form {
+  text-align: center;
+  color: $black;
+
+  &__title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &-input {
+    margin-bottom: 50px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &-input-radio {
+    margin-bottom: 7px;
+
+    &:last-of-type {
+      margin-bottom: 47px;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  max-width: 380px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: 14px;
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+    background-color: transparent;
+    color: $gray-dark;
+  }
+
+  &__label {
+    display: flex;
+    margin-top: 43px;
+    margin-bottom: 11px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  &__submit {
+    display: flex;
+    background-color: $yellow;
+    color: rgba(255, 255, 255, 0.87);
+    width: fit-content;
+    height: 34px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 80px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    &:hover:not(:disabled) {
+      background-color: $yellow-hover;
+    }
+
+    &:disabled {
+      background-color: $gray-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  /* Стилізація radio buttons */
+  input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $gray-border;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:checked::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      background-color: $blue;
+      border-radius: 50%;
+    }
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &__hint {
+    position: absolute;
+    top: 238px;
+    left: 13px;
+    font-size: 12px;
+    color: $gray-dark;
+  }
+}
+
+.upload-block {
+  display: flex;
+  align-items: stretch;
+
+  .upload-label {
+    padding: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid $black;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .upload-input {
+    display: none;
+  }
+
+  .upload-filename {
+    display: flex;
+    font-size: 16px;
+    color: $gray-dark;
+    border: 1px solid $gray-light;
+    padding: 14px;
+    flex: 1;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+/* success */
+.success-message {
+  text-align: center;
+
+  .success-title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    color: $success-color;
+    margin-bottom: 50px;
+  }
+
+  .success-image {
+    width: 328px;
+    height: 290px;
+    margin-bottom: 100px;
+  }
+
+  .success-footer {
+    display: flex;
+    color: $success-footer-color;
+    position: relative;
+    padding: 17px 0;
+    font-size: 16px;
+    line-height: 1.625;
+    color: $success-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $gray-light;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 import PostForm from "./PostForm";
 import UsersSection from "./Users";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const usersRef = useRef(null);

@@ -1,7 +1,6 @@
 .post-form {
   text-align: center;
   color: #000;
-  margin-bottom: 100px;
 }
 .post-form__title {
   font-weight: 400;
@@ -160,7 +159,6 @@ input[type="radio"]:focus {
 /* success */
 .success-message {
   text-align: center;
-  padding: 40px 20px;
 }
 
 .success-title {
@@ -179,12 +177,14 @@ input[type="radio"]:focus {
 }
 
 .success-footer {
-  font-size: 14px;
+  display: flex;
   color: #888;
   position: relative;
-
-  padding-top: 12px;
-  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 16px;
+  line-height: 1.625;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .success-footer::before {

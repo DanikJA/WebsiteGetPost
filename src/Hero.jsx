@@ -1,6 +1,6 @@
 import "./Hero.css";
 
-export const Hero = () => {
+export const Hero = ({ onSignUpClick }) => {
   return (
     <section className="hero">
       <div className="hero__content">
@@ -12,7 +12,9 @@ export const Hero = () => {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <button className="hero__btn">Sign up</button>
+        <button className="hero__btn" onClick={onSignUpClick}>
+          Sign up
+        </button>
       </div>
     </section>
   );

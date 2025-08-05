@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/WebsiteGetPost/static/css/main.d86895bf.css",
-    "main.js": "/WebsiteGetPost/static/js/main.349c5be7.js",
+    "main.css": "/WebsiteGetPost/static/css/main.fb44c583.css",
+    "main.js": "/WebsiteGetPost/static/js/main.93d3916c.js",
     "static/media/pexels-alexandr-podvalny-1227513.jpeg": "/WebsiteGetPost/static/media/pexels-alexandr-podvalny-1227513.be7665f876bbd9138501.jpeg",
     "static/media/success-image.svg": "/WebsiteGetPost/static/media/success-image.0d3202ba11b04fa7364b0f83ce42aea5.svg",
     "static/media/Logo.svg": "/WebsiteGetPost/static/media/Logo.8bb55362d01d55393ccc5476d96f0c14.svg",
+    "static/media/cover.svg": "/WebsiteGetPost/static/media/cover.fb98cf13a87225efe558669bdc541ac7.svg",
     "index.html": "/WebsiteGetPost/index.html",
-    "main.d86895bf.css.map": "/WebsiteGetPost/static/css/main.d86895bf.css.map",
-    "main.349c5be7.js.map": "/WebsiteGetPost/static/js/main.349c5be7.js.map"
+    "main.fb44c583.css.map": "/WebsiteGetPost/static/css/main.fb44c583.css.map",
+    "main.93d3916c.js.map": "/WebsiteGetPost/static/js/main.93d3916c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d86895bf.css",
-    "static/js/main.349c5be7.js"
+    "static/css/main.fb44c583.css",
+    "static/js/main.93d3916c.js"
   ]
 }

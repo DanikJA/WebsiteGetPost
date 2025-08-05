@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import successImg from "../assets/success-image.svg";
 import InputMask from "react-input-mask";
-import defaultPhoto from "../assets/cover.svg";
+// import defaultPhoto from "../assets/cover.svg";
 
 // Основний компонент форми
 const PostForm = () => {
@@ -112,14 +112,13 @@ const PostForm = () => {
   const isFormValid =
     formData.name.trim() !== "" &&
     formData.email.trim() !== "" &&
-    cleanedPhone.length === 12 && // +380XXXXXXXXX
+    cleanedPhone.length === 12 &&
     selectedPosition !== null &&
     formData.photo !== null;
 
   return (
     <section className="post-form">
       {isSuccess ? (
-        // Якщо успішно зареєстровано — показуємо меседж
         <div className="success-message">
           <div className="success-content">
             <h2 className="success-title">User successfully registered</h2>
